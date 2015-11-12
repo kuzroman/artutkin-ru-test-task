@@ -30,5 +30,3 @@ var Router = Backbone.Router.extend({
 new Router();
 Backbone.history.start();
 
-
-

@@ -10,8 +10,7 @@ module.exports = {
   debug: NODE_ENV == 'dev',
 
   entry: {
-    main: './js/main.js',
-    //css: './assets/css/main.css'
+    main: './js/main.js'
   },
   output: {
     path: __dirname + '/build/',
@@ -22,9 +21,7 @@ module.exports = {
 
   module: {
     loaders: [
-      {exclude: /(node_modules)/, test: /\.js$/, loader: 'babel'},
-      //{test: /\.(css||scss)$/, loaders: ["style", "css?sourceMap", "sass?sourceMap"]},
-
+      {exclude: /(node_modules)/, test: /\.js$/, loader: 'babel'}
     ]
   },
   plugins: [
