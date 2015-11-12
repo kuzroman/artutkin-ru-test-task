@@ -22,8 +22,8 @@
     "webpack-dev-server": "^1.12.0"
   },
   "scripts": {
-    "preinstall": "npm install grunt-cli -g",
-    "postinstall": "grunt copy:postinstall"
+    "preinstall": "",
+    "postinstall": ""
   },
   "dependencies": {
     "backbone": "^1.2.3",
