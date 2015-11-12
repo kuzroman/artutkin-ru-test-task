@@ -1,20 +1,32 @@
-//require('handlebars');
-require('handlebars/runtime');
+'use strict';
 var Backbone = require("backbone");
+
+import {peopleArr}   from './data';
+import {PeopleC}     from './personModel';
+import {PersonV}     from './personView';
+import {ListV}       from './listView';
+import {NavigationV} from './navView';
+
+var peopleC = new PeopleC(peopleArr);
+new PersonV({collection: peopleC});
+new ListV({collection: peopleC});
+new NavigationV({collection: peopleC});
 
 var Router = Backbone.Router.extend({
   routes: {
-    '': 'index'
-    , ":query": "person" // #person/some
+    '': 'index',
+    "person/:query": "person"
   },
   index: function () {
-    console.log('index');
-
+    peopleC.changeActive(1);
   },
   person: function (num) {
-    console.log('person ' + num);
+    peopleC.changeActive(num);
   }
 });
 
-var router = new Router();
+new Router();
 Backbone.history.start();
+
+
+
