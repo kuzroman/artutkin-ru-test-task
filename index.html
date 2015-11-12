@@ -1,11 +1,32 @@
 <html>
 <head>
-  <title></title>
+  <title>kuzroman.com</title>
   <meta charset="utf-8">
-  <!--<link rel="stylesheet" href="/css/main.css">-->
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  
+  <div class="person">
+    <div class="person-short"></div>
+    <div class="person-more"></div>
+  </div>
+  <ul class="list"></ul>
+
+  <script type="text/template" id="personShort">
+    <p><%=first_name%></p>
+    <p><%=last_name%></p>
+    <p><%=age%></p>
+    <p><%=location%></p>
+  </script>
+  <script type="text/template" id="personMore">
+    <p><%=first_name%></p>
+    <p><%=last_name%></p>
+  </script>
+  <script type="text/template" id="listItem">
+    <a href="#/person/<%=id%>" <% if (active) { %> class="active" <%}%> >
+      <p><%=first_name%></p>
+      <p><%=age%></p>
+    </a>
+  </script>
 
   <script src="/build/main.js"></script>
 </body>

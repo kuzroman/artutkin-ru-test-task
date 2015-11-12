@@ -1,0 +1,74 @@
+html {height: 100%;}
+body {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    min-width: 400px;
+    color: #333;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+
+
+.person {
+    background: #e6e6e6;
+    overflow: hidden;
+}
+.person-short {
+    min-width: 100px;
+    padding: 50px 20px;
+    background: #4C8577;
+    float: left;
+    color: #fff;
+}
+.person-more {
+    padding: 50px 0;
+    text-align: center;
+}
+.person-more p {
+    font-size: 24px;
+}
+
+
+.list {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 1px;
+    background: #e6e6e6;
+}
+.list li {
+    flex: 1;
+    text-align: center;
+}
+.list li:first-child a {
+    border-left: 1px solid #e6e6e6;
+}
+.list a {
+    display: block;
+    padding: 20px 10px;
+    border-left: 1px solid #4C8577;
+    border-right: 1px solid #e6e6e6;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+.list .active a {
+    border: 1px solid #4C8577;
+}
+.list li.active:first-child a {
+    border-left: 1px solid #4C8577;
+}
+.list .active + li a {
+    border-left: 1px solid #e6e6e6;
+}
