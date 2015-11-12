@@ -1,4 +1,6 @@
 'use strict';
+
+require("../css/main.css");
 var Backbone = require("backbone");
 
 import {peopleArr}   from './data';
