@@ -20,7 +20,7 @@ var Router = Backbone.Router.extend({
     "person/:query": "person"
   },
   index: function () {
-    peopleC.changeActive(1);
+    peopleC.changeActive(2);
   },
   person: function (num) {
     peopleC.changeActive(num);
