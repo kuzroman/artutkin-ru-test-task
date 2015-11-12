@@ -12,12 +12,14 @@ var Person = Backbone.Model.extend({
 export var PeopleC = Backbone.Collection.extend({
   model: Person,
   initialize: function () {
+    this.activeModel = null;
     this.listenTo(this.model, 'change:active', this.changeActive);
   },
   changeActive: function (num) {
-    this.each(function (model) {
-      if (model.get('active') == true) model.set('active', false);
-    });
+    if (this.activeModel !== null)
+      this.get(this.activeModel).set('active', false);
+
+    this.activeModel = num;
     this.get(num).set('active', true);
   }
 });
