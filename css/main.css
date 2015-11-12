@@ -72,3 +72,39 @@ li {
 .list .active + li a {
     border-left: 1px solid #e6e6e6;
 }
+
+
+.nav {
+    text-align: center;
+}
+.nav i {
+    width: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
