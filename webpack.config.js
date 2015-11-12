@@ -1,7 +1,8 @@
 'use strict';
 
-const NODE_ENV = 'dev'; // dev || prod
+const NODE_ENV = 'prod'; // dev || prod
 const webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 
@@ -23,6 +24,7 @@ module.exports = {
     loaders: [
       {exclude: /(node_modules)/, test: /\.js$/, loader: 'babel'},
       //{test: /\.(css||scss)$/, loaders: ["style", "css?sourceMap", "sass?sourceMap"]},
+
     ]
   },
   plugins: [
@@ -30,13 +32,14 @@ module.exports = {
       $: "jquery",
       "_": "underscore"
     }),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin("styles.css")
   ]
 };
 
 if (NODE_ENV == 'prod') {
-  module.exports.module.loaders[1].loaders = ["style", "css", "sass"];
   module.exports.module.loaders.push(
+    {test: /\.css$/, loader: ExtractTextPlugin.extract("style", "css")},
     {test: /\.(png||svg)$/, loader: "url-loader?limit=100000"},
     {test: /\.jpg$/, loader: "file-loader"}
   );
